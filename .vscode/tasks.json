@@ -1,0 +1,37 @@
+{
+    "version": "2.0.0",
+    "inputs": [
+        {
+            "id": "testID",
+            "type": "promptString",
+            "description": "Test ID:"
+        }
+    ],
+    "tasks": [
+        {
+            "label": "compile",
+            "type": "shell",
+            "command": "bash -c 'g++ -DJP -g ./sol.cpp -o ./sol'",
+        },
+        {
+            "label": "valgrind-run",
+            "type": "shell",
+            "command": "bash -c 'valgrind --quiet --leak-check=summary ./sol < ./${input:testID}'",
+        },
+        {
+            "label": "valgrind-run-1",
+            "type": "shell",
+            "command": "bash -c 'valgrind --quiet --leak-check=summary ./sol < ./1.in'",
+        },
+        {
+            "label": "valgrind-run-2",
+            "type": "shell",
+            "command": "bash -c 'valgrind --quiet --leak-check=summary ./sol < ./2.in'",
+        },
+        {
+            "label": "valgrind-run-3",
+            "type": "shell",
+            "command": "bash -c 'valgrind --quiet --leak-check=summary ./sol < ./3.in'",
+        }
+    ]
+}
