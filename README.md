@@ -6,7 +6,7 @@
 sudo apt install build-essential
 sudo apt install valgrind
 ```
-2. Add to your VSCode project the file `.vscode/tasks.json`.
+2. Add to your VSCode project the file `.vscode/tasks.json` and replace the macro `JP` with yours.
 3. Add the following keybindings to your `keybindings.json`. 
 ```json
 [

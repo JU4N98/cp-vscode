@@ -11,27 +11,27 @@
         {
             "label": "compile",
             "type": "shell",
-            "command": "bash -c 'g++ -DJP -g ./sol.cpp -o ./sol'",
+            "command": "cd ${fileDirname}; bash -c 'g++ -DJP -g sol.cpp -o sol';",
         },
         {
             "label": "valgrind-run",
             "type": "shell",
-            "command": "bash -c 'valgrind --quiet --leak-check=summary ./sol < ./${input:testID}'",
+            "command": "cd ${fileDirname}; bash -c 'valgrind --quiet --leak-check=summary ./sol < ./${input:testID}';",
         },
         {
             "label": "valgrind-run-1",
             "type": "shell",
-            "command": "bash -c 'valgrind --quiet --leak-check=summary ./sol < ./1.in'",
+            "command": "cd ${fileDirname}; bash -c 'valgrind --quiet --leak-check=summary ./sol < ./1.in';",
         },
         {
             "label": "valgrind-run-2",
             "type": "shell",
-            "command": "bash -c 'valgrind --quiet --leak-check=summary ./sol < ./2.in'",
+            "command": "cd ${fileDirname}; bash -c 'valgrind --quiet --leak-check=summary ./sol < ./2.in';",
         },
         {
             "label": "valgrind-run-3",
             "type": "shell",
-            "command": "bash -c 'valgrind --quiet --leak-check=summary ./sol < ./3.in'",
+            "command": "cd ${fileDirname}; bash -c 'valgrind --quiet --leak-check=summary ./sol < ./3.in';",
         }
     ]
 }
